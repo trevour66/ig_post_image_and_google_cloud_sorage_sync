@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "@google-cloud/storage": "^7.12.1",
+    "compress-images": "^2.0.5",
+    "dotenv": "^16.4.5",
+    "gifsicle": "^5.2.1",
+    "mongodb": "6.9",
+    "pngquant-bin": "^6.0.1",
+    "selenium-webdriver": "^4.24.1",
+    "sqlite3": "^5.1.7",
+    "winston": "^3.16.0"
+  }
+}
