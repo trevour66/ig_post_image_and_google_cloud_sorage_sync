@@ -17,11 +17,11 @@ const bucketName = "like_and_share_ig_post_images";
 
 // Function to upload a file to Google Cloud Storage
 async function processAllFilesInGoogleCloudStorage() {
-  console.log("here");
+  // console.log("here");
   let pageToken = "";
 
   do {
-    console.log("here do");
+    // console.log("here do");
 
     const [files, query] = await storage.bucket(bucketName).getFiles({
       autoPaginate: false,
@@ -70,12 +70,13 @@ async function processAllFilesInGoogleCloudStorage() {
 
 async function deleteFile(fileName) {
   try {
-    console.log(`deleting ${fileName}`);
+    // console.log(`deleting ${fileName}`);
     const del_res = await storage.bucket(bucketName).file(fileName).delete();
-    console.log(`${fileName} deleted`);
+    // console.log(`${fileName} deleted`);
 
     // console.log(del_res);
   } catch (error) {
+    logger.error(`Error deleting file: ${error.message}`);
     console.log(error);
   }
 }
@@ -97,7 +98,7 @@ async function getIGPostByImageCDN(image_cdn) {
   }
 }
 
-processAllFilesInGoogleCloudStorage();
+// processAllFilesInGoogleCloudStorage();
 
 module.exports = {
   processAllFilesInGoogleCloudStorage,
